@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff8e8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="AI 한도">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="assets/shinchan-quota.png">
+  <title>오늘도 한도까지!</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="widget-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">AI WEEKLY METER</p>
+        <h1>오늘도 한도까지!</h1>
+        <p id="todayLabel" class="date-label"></p>
+      </div>
+      <div class="hero-actions">
+        <button id="refreshButton" class="refresh-button" type="button" aria-label="실시간 사용량 새로고침">↻</button>
+        <button id="editButton" class="edit-button" type="button" aria-label="사용량 수정">⚙ 수정</button>
+      </div>
+    </header>
+
+    <section class="summary" aria-label="오늘의 사용 추천">
+      <div class="summary-icon">⚡</div>
+      <div>
+        <span>오늘의 추천</span>
+        <strong id="recommendation">주간 한도를 고르게 사용 중이에요</strong>
+      </div>
+    </section>
+
+    <section id="serviceList" class="service-list" aria-label="AI 서비스 사용량"></section>
+
+    <footer class="footer-note">
+      <span class="pulse-dot"></span>
+      <span id="updatedLabel">이 브라우저에 안전하게 저장됨</span>
+    </footer>
+
+    <img class="shiro" src="assets/shiro.png" alt="짱구 옆의 흰둥이">
+    <img class="shinchan" src="assets/shinchan-quota.png" alt="노트북으로 AI 사용량을 확인하는 짱구">
+    <div class="decor decor-one"></div>
+    <div class="decor decor-two"></div>
+  </main>
+
+  <dialog id="settingsDialog">
+    <form id="settingsForm" method="dialog">
+      <div class="dialog-head">
+        <div>
+          <p class="eyebrow">QUICK EDIT</p>
+          <h2>사용량 수정</h2>
+        </div>
+        <button class="close-button" value="cancel" aria-label="닫기">×</button>
+      </div>
+      <div id="settingsFields" class="settings-fields"></div>
+      <div class="dialog-actions">
+        <button class="secondary-button" value="cancel">취소</button>
+        <button class="primary-button" value="default">저장하기</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
